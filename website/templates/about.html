@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>About the Dataset</h1>
+<p>This dataset contains information about heart disease diagnosis and various medical attributes that can be used to predict heart disease.</p>
+
+<h2>Variable Definitions</h2>
+<table class="data">
+    <tr>
+        <th>Variable</th>
+        <th>Description</th>
+    </tr>
+    {% for var, desc in variables.items() %}
+    <tr>
+        <td>{{ var }}</td>
+        <td>{{ desc }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

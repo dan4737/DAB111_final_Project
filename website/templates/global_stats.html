@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Heart Disease Health Information{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Heart Disease Health Information</h1>
+    
+    {% if health_info %}
+        <!-- CDC Statistics Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">CDC Heart Disease Statistics</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for stat in cdc_stats %}
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{ stat.fact }}</h5>
+                                        <p class="display-4">{{ stat.value }}</p>
+                                        <p class="text-muted">Source: {{ stat.source }} ({{ stat.year }})</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health.gov Resources Section -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0">Health.gov Resources</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for info in health_info %}
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ info.title }}</h5>
+                                        <p class="card-text">{{ info.description }}</p>
+                                        <p class="text-muted">Category: {{ info.category }}</p>
+                                        <p class="text-muted">Last Updated: {{ info.last_update }}</p>
+                                        {% if info.url %}
+                                        <a href="{{ info.url }}" class="btn btn-primary" target="_blank">
+                                            Learn More
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-warning">
+            <h4 class="alert-heading">Information Unavailable</h4>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% else %}
+                <p>We couldn't load the health information at the moment.</p>
+            {% endif %}
+            <hr>
+            <p class="mb-0">Please try again later or contact support if the issue persists.</p>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+    .card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .display-4 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+    .card-header {
+        border-bottom: none;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

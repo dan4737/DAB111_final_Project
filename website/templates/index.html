@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="home-content">
+    <h1>Heart Disease Data Analysis</h1>
+    <p>Welcome to the Heart Disease Data Analysis web application. This application provides access to a comprehensive dataset of heart disease information.</p>
+
+    <div class="page-links">
+        <div class="link-card">
+            <h2><a href="{{ url_for('about') }}">About</a></h2>
+            <p>Learn about the data source and explore detailed definitions of each variable in our dataset.</p>
+        </div>
+
+        <div class="link-card">
+            <h2><a href="{{ url_for('data') }}">Data</a></h2>
+            <p>View the heart disease dataset and explore the medical information collected from patients.</p>
+        </div>
+    </div>
+
+    <style>
+        .home-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .page-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .link-card {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .link-card h2 {
+            margin-top: 0;
+        }
+        .link-card a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+        .link-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+    </style>
+</div>
+{% endblock %}
