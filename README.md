@@ -109,15 +109,17 @@ python app.py
 - pip (Python package installer)
 - Git
 
-### Step-by-Step Installation
+### Step-by-Step Installation (Using Terminal/Command Prompt)
 
-1. Clone the repository:
+1. Open your terminal (Mac/Linux) or Command Prompt (Windows)
+
+2. Clone the repository:
 ```bash
 git clone https://github.com/dan4737/DAB111_final_Project.git
 cd DAB111_final_Project
 ```
 
-2. Create and activate a virtual environment:
+3. Create and activate a virtual environment in your terminal:
 ```bash
 # On macOS/Linux:
 python -m venv venv
@@ -128,28 +130,34 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-3. Install dependencies:
+4. Install dependencies through the terminal:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Initialize the database:
+5. Initialize the database (in terminal):
 ```bash
 cd database
 python create_db.py
 cd ..
 ```
 
-5. Start the web application:
+6. Start the web application (in terminal):
 ```bash
 cd website
 python app.py
 ```
+You should see a message saying "Running on http://localhost:5001"
 
-6. Access the website:
+7. Access the website:
 - Open your web browser
 - Go to: http://localhost:5001
 - You should see the Heart Disease Data Explorer homepage
+
+### Important Notes
+- Keep the terminal window open while using the website
+- To stop the server, go back to the terminal and press Ctrl+C
+- To restart the server later, just repeat step 6
 
 ### Navigation Guide
 - **Home Page** (http://localhost:5001/): Welcome page and overview
