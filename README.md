@@ -102,6 +102,74 @@ python app.py
 
 6. Access the application at: http://localhost:5001
 
+## 🚀 Quick Start Guide for Instructors
+
+### Prerequisites
+- Python 3.12 or later
+- pip (Python package installer)
+- Git
+
+### Step-by-Step Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/dan4737/DAB111_final_Project.git
+cd DAB111_final_Project
+```
+
+2. Create and activate a virtual environment:
+```bash
+# On macOS/Linux:
+python -m venv venv
+source venv/bin/activate
+
+# On Windows:
+python -m venv venv
+venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Initialize the database:
+```bash
+cd database
+python create_db.py
+cd ..
+```
+
+5. Start the web application:
+```bash
+cd website
+python app.py
+```
+
+6. Access the website:
+- Open your web browser
+- Go to: http://localhost:5001
+- You should see the Heart Disease Data Explorer homepage
+
+### Navigation Guide
+- **Home Page** (http://localhost:5001/): Welcome page and overview
+- **About Page** (http://localhost:5001/about): Detailed variable descriptions
+- **Data Page** (http://localhost:5001/data): View patient records
+- **Global Stats** (http://localhost:5001/global-stats): Health statistics and resources
+
+### Troubleshooting
+If you encounter any issues:
+1. Ensure all dependencies are installed: `pip install -r requirements.txt`
+2. Verify database creation: Check if `Heart_failure_db.db` exists in `database/database/`
+3. Check port availability: If port 5001 is in use, modify the port in `website/app.py`
+4. Ensure Python version compatibility: `python --version` should show 3.12 or later
+
+### System Requirements
+- Operating System: Windows 10/11, macOS, or Linux
+- RAM: 4GB minimum
+- Storage: 100MB free space
+- Internet connection (for Health.gov API access)
+
 ## Dataset Variables
 
 ### Patient Characteristics
